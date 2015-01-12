@@ -1,0 +1,30 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (3.2.21)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
+    bubble-wrap (1.7.1)
+      bubble-wrap-http (= 1.7.1)
+    bubble-wrap-http (1.7.1)
+    builder (3.2.2)
+    cdq (0.1.11)
+      motion-yaml
+      ruby-xcdm (~> 0.0, >= 0.0.8)
+    i18n (0.7.0)
+    motion-yaml (1.4)
+    multi_json (1.10.1)
+    plist (3.1.0)
+    ruby-xcdm (0.0.8)
+      activesupport (~> 3.2)
+      builder (~> 3.2)
+      plist (~> 3.1)
+    ruby_motion_query (1.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bubble-wrap
+  cdq
+  ruby_motion_query
