@@ -18,17 +18,17 @@ class ProfileViewController < UIViewController
   end
   
   def add_phone
+    phone_number = rmq(:phone_number_text).get
     if rmq(:phone_number_text).valid?
       if (0..5).include? (@phone_numbers.count)
         @phone_numbers << rmq(:phone_number_text).get.text
-        rmq(:phone_number_text).get.text = ""
-        NSLog("#{@phone_numbers}")
+        phone_number.text = ""
       else
-        App.alert("Alert", {cancel_button_title: "OK", message: "Only five phone number can add"})
-        rmq(:phone_number_text).get.text = ""
+        App.alert("Alert", message: "Only five phone number can add")
+        phone_number.text = ""
       end
     else
-      App.alert("Alert", {cancel_button_title: "OK", message: "Please enter exact 10 digits"})
+      App.alert("Alert", message: "Please enter exact 10 digits")
     end
   end
   
@@ -40,9 +40,9 @@ class ProfileViewController < UIViewController
     if rmq(:full_name_text).get.text != "" && @gender_value != nil && rmq(:sos_text).get.text != "" && (1..5).include? (@phone_numbers.count)
       ProfileData.create_table(rmq(:full_name_text).get.text, @gender_value, rmq(:sos_text).get.text, @phone_numbers[0], @phone_numbers[1], @phone_numbers[2], @phone_numbers[3], @phone_numbers[4])
       self.navigationController.popToRootViewControllerAnimated(true)
-      App.alert("Data Saved")
+      App.alert("Alert", message:"Data Saved")
     else
-      App.alert("Alert", {cancel_button_title: "OK", message: "Give all details in the respective text fields"})
+      App.alert("Alert", message: "Give all details in the respective text fields")
     end
   end
   
