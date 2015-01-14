@@ -3,12 +3,12 @@ class ProfileViewController < UIViewController
     rmq.stylesheet = ProfileViewControllerStyleSheet
     self.navigationController.navigationBar.setBarTintColor(rmq.color.from_hex("81F3FD"))
     
-    rightButton = UIBarButtonItem.alloc.initWithTitle("Home", style: UIBarButtonItemStyleBordered, target: self, action: "home_navigation")
+    rightButton = UIBarButtonItem.alloc.initWithTitle("Save", style: UIBarButtonItemStyleBordered, target: self, action: "upload")
     barButtonTitle = {UITextAttributeTextColor => UIColor.whiteColor, NSFontAttributeName => UIFont.fontWithName("HelveticaNeue-Bold", size: 17)}
     UIBarButtonItem.appearance.setTitleTextAttributes(barButtonTitle, forState: UIControlStateNormal)
     self.navigationItem.rightBarButtonItem = rightButton
     
-    leftButton = UIBarButtonItem.alloc.initWithTitle("Save Profile", style: UIBarButtonItemStyleBordered, target: self, action: "upload")
+    leftButton = UIBarButtonItem.alloc.initWithTitle("Back", style: UIBarButtonItemStyleBordered, target: self, action: "home_navigation")
     UIBarButtonItem.appearance.setTitleTextAttributes(barButtonTitle, forState: UIControlStateNormal)
     self.navigationItem.leftBarButtonItem = leftButton
     
@@ -28,7 +28,7 @@ class ProfileViewController < UIViewController
         rmq(:phone_number_text).get.text = ""
       end
     else
-      App.alert("Alert", {cancel_button_title: "OK", message: "please enter exact 10 digits"})
+      App.alert("Alert", {cancel_button_title: "OK", message: "Please enter exact 10 digits"})
     end
   end
   
@@ -42,7 +42,7 @@ class ProfileViewController < UIViewController
       self.navigationController.popToRootViewControllerAnimated(true)
       App.alert("Data Saved")
     else
-      App.alert("Alert", {cancel_button_title: "OK", message: "give all details in the respective text fields"})
+      App.alert("Alert", {cancel_button_title: "OK", message: "Give all details in the respective text fields"})
     end
   end
   

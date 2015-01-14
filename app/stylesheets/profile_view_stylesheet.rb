@@ -23,7 +23,7 @@ module ProfileViewStylesheet
   def male_button(st)
     st.frame = {l: 100, t: 190, w: 60, h: 30}
     st.image = UIImage.imageNamed("unchecked")
-    st.image_selected = UIImage.imageNamed("checked")
+    st.image_selected = UIImage.imageNamed("checked.jpg")
     st.text = "Male"
     st.color = color.gray
     st.font = rmq.font.system(15)
@@ -32,7 +32,7 @@ module ProfileViewStylesheet
   def female_button(st)
     st.frame = {l: 200, t: 190, w: 80, h: 30}
     st.image = UIImage.imageNamed("unchecked")
-    st.image_selected = UIImage.imageNamed("checked")
+    st.image_selected = UIImage.imageNamed("checked.jpg")
     st.text = "Female"
     st.color = color.gray
     st.font = rmq.font.system(15)
